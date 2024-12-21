@@ -33,6 +33,9 @@ class Level {
         } else if (this.grid[y][x] === 3){
           image(this.floorTargetAsset, x * 50, y * 50);
           noFill();
+        } else if (this.grid[y][x] === 5){
+          image(this.floorTargetAsset, x * 50, y * 50);
+          noFill();
         }
       }
     }
