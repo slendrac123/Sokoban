@@ -9,10 +9,11 @@ let scene;
 let transitionMessage = null;
 let showTransition = false;
 
+
 function setup() {
   createCanvas(800, 800);
 
-  // Inicializa la escena y carga el nivel inicial
+  // Inicializa la escena, musica y carga el nivel inicial
   scene = new Scene();
   loadLevel(scene.getCurrentLevel());
   
@@ -95,6 +96,9 @@ function loadLevel(grid) {
         boxes.push(new Box(x, y));
       } else if (grid[y][x] === 3) {
         checkpoints.push(new Checkpoint(x, y));
+      } else if (grid[y][x] === 5) {
+        checkpoints.push(new Checkpoint(x, y));
+        boxes.push(new Box(x, y));
       }
     }
   }

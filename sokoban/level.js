@@ -25,19 +25,10 @@ class Level {
         noFill();
         rect(x * 50, y * 50, 50, 50);
         if (this.grid[y][x] === 1) {
-          stroke(125, 37, 28);
-          image(this.wallAsset, x * 50, y * 50);
-          noFill();
-          rect(x * 50, y * 50, 50, 50, 3);
-        } else if (this.grid[y][x] === 5){
-          noStroke();
-          image(this.envAsset, x * 50, y * 50);
-          noFill();
+          fill(100);
           rect(x * 50, y * 50, 50, 50);
-        } else if (this.grid[y][x] === 3){
-          noStroke();
-          image(this.floorTargetAsset, x * 50, y * 50);
-          noFill();
+        } else if (this.grid[y][x] === 6){
+          fill(25,180,80);
           rect(x * 50, y * 50, 50, 50);
         }
       }
