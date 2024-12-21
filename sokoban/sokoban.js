@@ -1,14 +1,10 @@
 let startTime;
+let player, boxes = [], checkpoints = [], level, scene;
+let transitionMessage = null, showTransition = false, gameSoundtrack;
 
-let player;
-let boxes = [];
-let checkpoints = [];
-let level;
-let scene;
+function preload() {
 
-let transitionMessage = null;
-let showTransition = false;
-
+}
 
 function setup() {
   createCanvas(800, 800);
@@ -35,9 +31,6 @@ function draw() {
 
   // Dibuja el nivel, jugador y cajas
   level.draw();
-  for (let checkpoint of checkpoints) {
-    checkpoint.draw();
-  }
   player.draw();
   for (let box of boxes) {
     box.draw();
@@ -155,4 +148,9 @@ function drawBottomText() {
     width / 2,
     height - 25
   );
+}
+
+function playSoundtrack(){
+  const song = loadSound('/assets/music/soundtrack.mp3');
+  song.play();
 }

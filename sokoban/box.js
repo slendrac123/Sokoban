@@ -7,6 +7,7 @@ class Box {
   
   preloadAssets() {
     this.boxAsset = loadImage('/assets/box_1.png');
+    this.boxCheckAsset = loadImage('/assets/check_1.png');
   }
 
   move(dx, dy) {
@@ -16,16 +17,14 @@ class Box {
 
   draw() {
     noStroke();
-    image(this.boxAsset, this.x * 50, this.y * 50);
     noFill();
+    image(this.boxAsset, this.x * 50, this.y * 50);
     // Verifica si la caja está encima de un checkpoint
     let isOnCheckpoint = checkpoints.some(cp => cp.x === this.x && cp.y === this.y);
 
     if (isOnCheckpoint) {
-      fill(100, 150, 255); // Color azulado si está sobre un checkpoint
-    } else {
-      fill(255, 165, 0); // Color original (naranja)
-    }
+      image(this.boxCheckAsset, this.x * 50, this.y * 50);
+    } 
 
     rect(this.x * 50, this.y * 50, 50, 50);
   }
