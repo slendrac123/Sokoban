@@ -2,6 +2,11 @@ class Box {
   constructor(x, y) {
     this.x = x;
     this.y = y;
+    this.preloadAssets();
+  }
+  
+  preloadAssets() {
+    this.boxAsset = loadImage('/assets/box_1.png');
   }
 
   move(dx, dy) {
@@ -10,7 +15,9 @@ class Box {
   }
 
   draw() {
-    fill(255, 165, 0);
+    noStroke();
+    image(this.boxAsset, this.x * 50, this.y * 50);
+    noFill();
     rect(this.x * 50, this.y * 50, 50, 50);
   }
 }

@@ -2,6 +2,11 @@ class Player {
   constructor(x, y) {
     this.x = x;
     this.y = y;
+    this.preloadAssets();
+  }
+  
+  preloadAssets() {
+    this.playerAsset = loadImage('/assets/player_1.png');
   }
 
   move(dx, dy, level) {
@@ -30,7 +35,9 @@ class Player {
   }
 
   draw() {
-    fill(0, 255, 0);
+    noStroke();
+    image(this.playerAsset, this.x * 50, this.y * 50);
+    noFill();
     rect(this.x * 50, this.y * 50, 50, 50);
   }
 }
